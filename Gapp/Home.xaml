@@ -1,0 +1,95 @@
+﻿<Window x:Class="Gapp.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gapp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Activated="WindowActivated"
+        WindowStartupLocation="CenterOwner"
+        Title="Home" Height="676.8" Width="1200" Margin="0" Foreground="White" WindowStyle="None" Loaded="Window_Loaded" ResizeMode="NoResize" Icon="Image/LogoEgis.png" MouseDown="Window_MouseDown" WindowState="Maximized">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+    </Window.Background>
+
+    <Grid Margin="0,0,0,0"  HorizontalAlignment="Left" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Background="#FF04607A"  Grid.Row="0" Orientation="Horizontal" Width="1200" HorizontalAlignment="Left" >
+            <Button Width="114" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="Button_Click_2" Grid.Row="0">
+                <Grid>
+                    <materialDesign:PackIcon Kind="History" Margin="-17,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Historique" Margin="1,0,0,0" />
+                </Grid>
+
+            </Button>
+            <Image Source="/Gapp;component/Image/LogoEgis.png" Grid.Row="0" Width="1087" Height="30" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Right"/>
+
+
+        </StackPanel>
+
+        <Grid Margin="0,30,0,0.8" MaxWidth="Infinity" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="199*"/>
+                <ColumnDefinition Width="101*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="80*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Left">
+                <Image Source="/Gapp;component/Image/logo-egis-group.png" Width="122" Height="50"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="20,0,0,0">
+                <Label   Foreground="#FF04607A" HorizontalAlignment="Left"  Height="24" VerticalAlignment="Top" Content="Rechercher ..."></Label>
+                <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266"  TextChanged="TxtSearch_TextChanged" Margin="0,0,0,0"/>
+            </StackPanel>
+            <DataGrid Name="gvData" SelectionMode="Single" FrozenColumnCount="1" HorizontalGridLinesBrush="#FF8C8C8C" AlternatingRowBackground="#FF8C8C8C" RowBackground="#FFC8C8C8" Grid.Row="2" Grid.Column="0" Width="Auto" Height="Auto" Margin="20,20,20,20"/>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="50*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Click="Button_Click" Height="40" Margin="0,10,0,15" >
+                        <Grid Height="35" Width="133" Background="#FFABC100">
+                            <materialDesign:PackIcon Kind="Import" RenderTransformOrigin="28.825,1.15" Height="23" Width="26" Margin="0,4,0,0"/>
+                            <TextBlock HorizontalAlignment="Left" Text="Enregistrement" Margin="31,7,0,8"/>
+                        </Grid>
+                    </Button>
+                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="Button_Click_1" >
+                        <Grid Height="34" Width="133" Background="#FFABC100">
+                            <materialDesign:PackIcon Kind="Export" RenderTransformOrigin="28.825,1.15" Height="28" Width="26" Margin="10,4,0,0"/>
+                            <TextBlock HorizontalAlignment="Center" Text="Quitter" Margin="48,6,41,2" Width="44"/>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+                <StackPanel Background="{x:Null}" RenderTransformOrigin="0.513,0.65" HorizontalAlignment="Right" Width="358" Height="102" VerticalAlignment="Top" Grid.Row="1">
+                    <Label x:Name="timelbl" Foreground="#FFABC100" FontSize="60" FontFamily="Stormfaze" HorizontalAlignment="Center" Content="00:00:00" />
+                </StackPanel>
+
+                <StackPanel Background="{x:Null}" Margin="0,100,0,0" Grid.Row="1">
+                    <Label x:Name="datelbl" Foreground="#FFABC100" FontSize="20" FontFamily="Britanic Bold" HorizontalAlignment="Center" Content="00.00.2000" />
+                </StackPanel>
+
+            </Grid>
+
+
+        </Grid>
+
+
+
+
+
+
+    </Grid>
+
+</Window>
