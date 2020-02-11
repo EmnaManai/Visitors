@@ -20,6 +20,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Windows.Controls.Primitives;
 using System.Collections;
+using System.Globalization;
 
 namespace Gapp
 {
@@ -76,7 +77,7 @@ namespace Gapp
             if (con.State != ConnectionState.Open)
                 con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "select ID,firstName,lastName,company,arrivalTime, departureTime from guestTable where creationDate = #" + selectedDate + "#";
+            cmd.CommandText = "select ID,firstName,lastName,company,arrivalTime, departureTime from guestTable where creationDate = #" + selectedDate.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture) + "#";
 
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             dt = new System.Data.DataTable();
@@ -120,8 +121,8 @@ namespace Gapp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
 
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -157,570 +158,6 @@ namespace Gapp
         {
             BindGrid();
         }
-        public Excel.Application Application
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public XlCreator Creator
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        dynamic Excel.Window.Parent
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Range ActiveCell
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Chart ActiveChart
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Pane ActivePane
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public dynamic ActiveSheet
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public dynamic Caption
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayFormulas
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayGridlines
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayHeadings
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayHorizontalScrollBar
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayOutline
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool _DisplayRightToLeft
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayVerticalScrollBar
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayWorkbookTabs
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayZeros
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool EnableResize
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool FreezePanes
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int GridlineColor
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public XlColorIndex GridlineColorIndex
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Index
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string OnWindow
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Panes Panes
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Range RangeSelection
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int ScrollColumn
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int ScrollRow
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Sheets SelectedSheets
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public dynamic Selection
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool Split
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int SplitColumn
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double SplitHorizontal
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int SplitRow
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double SplitVertical
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double TabRatio
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public XlWindowType Type
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double UsableHeight
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double UsableWidth
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool Visible
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Range VisibleRange
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int WindowNumber
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        XlWindowState Excel.Window.WindowState
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public dynamic Zoom
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public XlWindowView View
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayRightToLeft
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public SheetViews SheetViews
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public dynamic ActiveSheetView
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayRuler
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool AutoFilterDateGrouping
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool DisplayWhitespace
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Hwnd
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        
 
         dynamic Excel.Window.Activate()
         {
@@ -797,9 +234,82 @@ namespace Gapp
             throw new NotImplementedException();
         }
 
-       
+        public Excel.Application Application => throw new NotImplementedException();
 
-        
+        public XlCreator Creator => throw new NotImplementedException();
 
+        dynamic Excel.Window.Parent => throw new NotImplementedException();
+
+        public Range ActiveCell => throw new NotImplementedException();
+
+        public Chart ActiveChart => throw new NotImplementedException();
+
+        public Pane ActivePane => throw new NotImplementedException();
+
+        public dynamic ActiveSheet => throw new NotImplementedException();
+
+        public dynamic Caption { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayFormulas { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayGridlines { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayHeadings { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayHorizontalScrollBar { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayOutline { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool _DisplayRightToLeft { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayVerticalScrollBar { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayWorkbookTabs { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayZeros { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool EnableResize { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool FreezePanes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int GridlineColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public XlColorIndex GridlineColorIndex { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public int Index => throw new NotImplementedException();
+
+        public string OnWindow { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Panes Panes => throw new NotImplementedException();
+
+        public Range RangeSelection => throw new NotImplementedException();
+
+        public int ScrollColumn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int ScrollRow { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Sheets SelectedSheets => throw new NotImplementedException();
+
+        public dynamic Selection => throw new NotImplementedException();
+
+        public bool Split { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int SplitColumn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double SplitHorizontal { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int SplitRow { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double SplitVertical { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double TabRatio { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public XlWindowType Type => throw new NotImplementedException();
+
+        public double UsableHeight => throw new NotImplementedException();
+
+        public double UsableWidth => throw new NotImplementedException();
+
+        public bool Visible { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Range VisibleRange => throw new NotImplementedException();
+
+        public int WindowNumber => throw new NotImplementedException();
+
+        XlWindowState Excel.Window.WindowState { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public dynamic Zoom { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public XlWindowView View { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayRightToLeft { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public SheetViews SheetViews => throw new NotImplementedException();
+
+        public dynamic ActiveSheetView => throw new NotImplementedException();
+
+        public bool DisplayRuler { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool AutoFilterDateGrouping { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool DisplayWhitespace { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public int Hwnd => throw new NotImplementedException();
     }
 }
