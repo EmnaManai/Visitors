@@ -15,6 +15,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Collections;
 using System.Windows.Threading;
+using System.Globalization;
 
 namespace Gapp
 {
@@ -39,12 +40,12 @@ namespace Gapp
         }
         private void BindGrid()
         {
-            DateTime today = DateTime.Now.Date;
+            DateTime today = DateTime.Now;
             OleDbCommand cmd= new OleDbCommand();
             if (con.State != ConnectionState.Open)
                 con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "select lastName,firstName,company,arrivalTime, departureTime from guestTable where creationDate = #" + today+"#";
+            cmd.CommandText = "select lastName,firstName,company,arrivalTime, departureTime from guestTable where creationDate = #"+today.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture) + "#";
     
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             dt = new DataTable();
@@ -80,7 +81,7 @@ namespace Gapp
             if (con.State != ConnectionState.Open)
                 con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "select lastName,firstName,company,arrivalTime, departureTime from guestTable where lastName like '%" + txtSearch.Text+ "%' and creationDate = #" + today + "#";
+            cmd.CommandText = "select lastName,firstName,company,arrivalTime, departureTime from guestTable where lastName like '%" + txtSearch.Text+ "%' and creationDate = #" + today.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture) + "#";
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);

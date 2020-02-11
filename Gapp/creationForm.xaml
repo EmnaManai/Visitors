@@ -1,5 +1,6 @@
 ﻿<Window x:Class="Gapp.creationForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Control="clr-namespace:WPF_AutoCompleteComboBox;assembly=WPF_AutoCompleteComboBox"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -25,11 +26,12 @@
 
 
             <Label HorizontalAlignment="Center" FontSize="36" FontWeight="Bold">
-            
+
             </Label>
             <WrapPanel>
                 <TextBlock Text="Nom : "/>
-                <TextBox Name="txtlastName" TextChanged="txtlastName_TextChanged"  />
+
+                <Control:AutoCompleteComboBox Height="56" x:Name="acCbx" VerticalAlignment="Top" Margin="10,48,10,0" CbSelectionChanged="AcCbx_CbSelectionChanged" Width="264"></Control:AutoCompleteComboBox>
 
             </WrapPanel>
             <WrapPanel>

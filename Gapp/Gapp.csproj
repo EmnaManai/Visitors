@@ -67,6 +67,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPF_AutoCompleteComboBox">
+      <HintPath>E:\wpf-autoCompletecombobox-dll\WPF_AutoCompleteComboBox_dll\WPF_AutoCompleteComboBox.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
